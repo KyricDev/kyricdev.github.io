@@ -3,12 +3,12 @@ import { V1Main } from "./v1/components/V1Main.js";
 import { V2Main } from "./v2/components/V2Main.js";
 
 function App() {
-    return (
-        <Routes>
-            <Route path="/v1" element={<V1Main />} />
-            <Route path="/" element={<V2Main />} />
-        </Routes>
-    )
+  return (
+    <Routes>
+      <Route path="/v1" element={<V1Main />} />
+      <Route path="/" element={<V2Main />} />
+    </Routes>
+  );
 }
 
 export { App };
