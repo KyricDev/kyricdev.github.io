@@ -1,7 +1,8 @@
+import "../styles/tailwind.css";
+
 function V2Main() {
     return (
-        <div>
-            
+        <div className="flex flex-col">
         </div>
     )
 }
