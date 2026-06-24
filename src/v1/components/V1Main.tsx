@@ -12,6 +12,11 @@ import dotNetCore from '../assets/svg/dotnetCore.svg';
 import flutterLogo from '../assets/svg/flutter.svg'; 
 import postgresqlLogo from '../assets/svg/postgresql.svg'; 
 import nodeJsLogo from '../assets/svg/nodejs.svg'; 
+import landingImg from '../assets/images/landing.jpg';
+import bosEmsImg1 from '../assets/images/ems1.png';
+import bosEmsImg2 from '../assets/images/ems2.png';
+import chrysallisImg from '../assets/images/Chrysallis.jpg';
+import moolamoreImg from '../assets/images/mm1.png';
 import { NavBar } from './NavBar.js';
 import { MainNavBar } from './MainNavBar.js';
 import { ContactIcons } from './ContactIcons.js';
@@ -28,7 +33,7 @@ function V1Main() {
                 </div>
             </div>
             <div className="landing-container">
-                <img src="./dist/img/landing.jpg" className="landing-img"/>
+                <img src={landingImg} className="landing-img"/>
             </div>
             </div>
             <div className="flex column center-row sticky navbar">
@@ -50,12 +55,12 @@ function V1Main() {
                             <div className="flex space-evenly-column font-green">
                                 <a className="transition-navbar hover" href="https://hive-app.bos-ems.com/" target="_blank">SITE</a>
                             </div>
-                        </div>
+                      </div>
                         <div className="relative margin-global-right flex end-column align-self-center vw-53 margin-top-img">
-                            <img className="img-horizontal img-behind absolute" src="dist/img/ems1.png" />
+                            <img className="img-horizontal img-behind absolute" src={bosEmsImg1} />
                             <div className="relative z-b1">
-                                <img className="img-horizontal" src="dist/img/ems2.png" />
-                                <div className="black-filter"></div>
+                                <img className="img-horizontal" src={bosEmsImg2} />
+                                  <div className="black-filter"></div>
                             </div>
                         </div>
                     </div>
@@ -68,7 +73,7 @@ function V1Main() {
                             </div>
                         </div>
                         <div className="relative margin-global-right flex end-column align-self-center vw-53">
-                            <img className="img-square" src="dist/img/Chrysallis.jpg" />
+                            <img className="img-square" src={chrysallisImg} />
                         </div>
                     </div>    
                     <div className="flex space-between-column padding-top-5 width-100 height-70" id="project3">
@@ -82,7 +87,7 @@ function V1Main() {
                         </div>
                         <div className="relative margin-global-right flex end-column vw-53 align-self-center">
                             <div className="relative z-b1">
-                                <img className="img-horizontal" src="dist/img/mm1.png" />
+                                <img className="img-horizontal" src={moolamoreImg} />
                             </div>
                         </div>
                     </div>

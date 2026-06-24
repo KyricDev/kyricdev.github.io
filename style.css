@@ -488,6 +488,7 @@ p{
 .landing-img{
     opacity: 5%;
     width: 100vw;
+    height: auto;
 }
 .landing-container{
     height: 100vh;
