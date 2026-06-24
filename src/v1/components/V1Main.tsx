@@ -22,9 +22,11 @@ import { MainNavBar } from './MainNavBar.js';
 import { ContactIcons } from './ContactIcons.js';
 import { ToTop } from './ToTop.js';
 
+import "../styles/style.css";
+
 function V1Main() {
     return (
-        <>
+        <div className='bg-dark-purple font-ntr'>
             <div className="flex column center-row landing-relative" id="home">
             <div className="flex vw-70">
                 <div className="font-castorgate font-white font-size-64 flex column end-column margin-global-left margin-bottom-50 title-margin">
@@ -51,10 +53,10 @@ function V1Main() {
                             <div className="font-white desc-padding">
                                 <span className="font-pink">Employee management software.</span> 
                                 Allows admins and HR personnel to add and update <span className="font-pink">employee data and schedules</span>  and allows employees to <span className="font-pink">request leaves, purchase requests, and view payroll data</span> as self-service.
-                            </div>
+                           </div>
                             <div className="flex space-evenly-column font-green">
                                 <a className="transition-navbar hover" href="https://hive-app.bos-ems.com/" target="_blank">SITE</a>
-                            </div>
+                             </div>
                       </div>
                         <div className="relative margin-global-right flex end-column align-self-center vw-53 margin-top-img">
                             <img className="img-horizontal img-behind absolute" src={bosEmsImg1} />
@@ -206,7 +208,7 @@ function V1Main() {
                     <ContactIcons />
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 
