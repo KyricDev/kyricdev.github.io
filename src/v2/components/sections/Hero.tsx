@@ -11,18 +11,23 @@ export function Hero() {
 
   return (
     <div
-      className={cn("relative", "w-full h-screen flex flex-col justify-center")}
+      id="hero"
+      className={cn(
+        "relative",
+        "w-full h-screen flex flex-col justify-center",
+        "pl-20",
+      )}
     >
       <div
         className="
           absolute
           size-[600px]
           rounded-full
-          bg-primary/50
+          bg-primary
           -z-10
           top-0
           left-0
-          blur-[1000px]
+          blur-[600px]
           transition-all duration-5000
         "
         style={{
@@ -32,7 +37,7 @@ export function Hero() {
 
       <div
         className="flex flex-col gap-5 
-      p-20 text-left"
+        py-20 text-left"
       >
         <div className="flex text-white gap-5 items-center">
           <SiGithub className="text-4xl" />
@@ -51,7 +56,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="pl-20 flex gap-3">
+      <div className="flex gap-3">
         <Button className="p-6">
           <div>Download CV</div>
           <DownloadIcon />
