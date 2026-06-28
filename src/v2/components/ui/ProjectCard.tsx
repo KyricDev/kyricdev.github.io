@@ -16,7 +16,7 @@ export function ProjectCard(props: ProjectCardProps) {
   const { description, icons, title, url, img } = props;
 
   return (
-    <div className="flex flex-col gap-10 max-w-6xl">
+    <div className="flex flex-col gap-10 max-w-4xl">
       <div className="flex flex-col gap-2">
         <div className="text-3xl font-light">{title ?? "Sample Title"}</div>
         <div className="flex gap-2 text-3xl">

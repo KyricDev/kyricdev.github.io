@@ -22,7 +22,7 @@ export function useElementObserver({ id, threshold }: UseElementObserverProps) {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [id, threshold]);
 
   return { isVisible };
 }
