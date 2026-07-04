@@ -3,10 +3,15 @@ import { useEffect, useState } from "react";
 type UseElementObserverProps = {
   id: string;
   threshold?: number;
+  initialState?: boolean;
 };
 
-export function useElementObserver({ id, threshold }: UseElementObserverProps) {
-  const [isVisible, setVisible] = useState(false);
+export function useElementObserver({
+  id,
+  threshold,
+  initialState,
+}: UseElementObserverProps) {
+  const [isVisible, setVisible] = useState(initialState ?? false);
 
   useEffect(() => {
     const element = document.getElementById(id);
