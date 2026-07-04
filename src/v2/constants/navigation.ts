@@ -11,14 +11,17 @@ export const NavList: Record<string, Omit<NavLinkProps, "isVisible">> = {
     label: "about me",
     href: "#aboutme",
   },
-  socials: {
-    label: "socials",
-    href: "#socials",
-  },
 };
 
 export type NavLinkProps = {
   isVisible: boolean;
   label: string;
   href: string;
+  className?: string;
+};
+
+export const Links = {
+  github: "https://github.com/KyricDev",
+  resume: "/cv/Resume-Madrid.pdf",
+  linkedIn: "https://www.linkedin.com/in/ricky-dave-madrid-aa4ba6149/",
 };
