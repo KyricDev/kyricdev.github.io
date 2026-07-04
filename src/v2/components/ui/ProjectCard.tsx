@@ -10,41 +10,80 @@ type ProjectCardProps = {
   icons?: IconMapKey[];
   url?: string;
   img?: string;
+  index?: number;
 };
 
 export function ProjectCard(props: ProjectCardProps) {
-  const { description, icons, title, url, img } = props;
+  const { description, icons, title, url, img, index } = props;
+
+  if (index !== undefined && index % 2 === 0) {
+    return (
+      <div className="flex gap-10 h-screen items-center">
+        <div className="flex flex-col gap-10 flex-1 items-end">
+          <div className="flex flex-col gap-2">
+            <div className="text-3xl font-light text-right">
+              {title ?? "Sample Title"}
+            </div>
+            <div className="flex gap-2 text-3xl">
+              <BsJavascript />
+              <FaNodeJs />
+              <SiRemix />
+              <SiPostgresql />
+              <SiSentry />
+              <SiBetterauth />
+            </div>
+          </div>
+          <div className="flex gap-10">
+            {img ? (
+              <img src={img} />
+            ) : (
+              <div className="flex-1 bg-primary h-56 rounded-4xl" />
+            )}
+            <div className="flex-1 text-xl text-right">
+              {description ??
+                `
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation`}
+            </div>
+          </div>
+          <div>
+            <Button className="px-15 py-7">Site</Button>
+          </div>
+        </div>
+        <div className="flex-1" />
+      </div>
+    );
+  }
 
   return (
-    <div className="flex flex-col gap-10 max-w-4xl">
-      <div className="flex flex-col gap-2">
-        <div className="text-3xl font-light">{title ?? "Sample Title"}</div>
-        <div className="flex gap-2 text-3xl">
-          <BsJavascript />
-          <FaNodeJs />
-          <SiRemix />
-          <SiPostgresql />
-          <SiSentry />
-          <SiBetterauth />
+    <div className="flex gap-10 h-screen items-center">
+      <div className="flex-1" />
+      <div className="flex flex-col gap-10 flex-1">
+        <div className="flex flex-col gap-2">
+          <div className="text-3xl font-light">{title ?? "Sample Title"}</div>
+          <div className="flex gap-2 text-3xl">
+            <BsJavascript />
+            <FaNodeJs />
+            <SiRemix />
+            <SiPostgresql />
+            <SiSentry />
+            <SiBetterauth />
+          </div>
         </div>
-      </div>
-      <div className="flex gap-2 items-end">
-        <div className="flex-1 text-xl">
-          {description ??
-            `
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation` +
-              `ullamco laboris nisi utaliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.
-            `}
+        <div className="flex gap-10">
+          <div className="flex-1 text-xl text-left">
+            {description ??
+              `
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim adminim veniam, quis nostrud exercitation`}
+          </div>
+          {img ? (
+            <img src={img} />
+          ) : (
+            <div className="flex-1 bg-primary h-56 rounded-4xl" />
+          )}
         </div>
-        {img ? (
-          <img src={img} />
-        ) : (
-          <div className="flex-1 bg-primary h-64 rounded-4xl" />
-        )}
-      </div>
-
-      <div>
-        <Button className="px-15 py-7">Site</Button>
+        <div>
+          <Button className="px-15 py-7">Site</Button>
+        </div>
       </div>
     </div>
   );
