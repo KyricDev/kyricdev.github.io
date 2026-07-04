@@ -67,14 +67,6 @@ const BackendIconMap: Record<string, { icon: IconType; label: string }> = {
     icon: SiDocker,
     label: "Docker",
   },
-  kubernetes: {
-    icon: SiKubernetes,
-    label: "Kubernetes",
-  },
-  prisma: {
-    icon: SiPrisma,
-    label: "Prisma",
-  },
   next: {
     icon: SiNextdotjs,
     label: "NextJS",
