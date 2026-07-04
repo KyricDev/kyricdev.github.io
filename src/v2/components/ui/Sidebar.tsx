@@ -7,6 +7,7 @@ export function Sidebar() {
   const { isVisible: isHeroVisible } = useElementObserver({
     id: "hero",
     threshold: 0,
+    initialState: true,
   });
   const { activeSectionId } = useActiveSection();
 
@@ -24,16 +25,14 @@ export function Sidebar() {
     },
   );
 
-  useActiveSection();
-
   return (
     <div
       className={cn(
-        "fixed top-0 flex flex-col gap-10 z-10 text-white text-left",
+        "fixed top-0 z-10 flex flex-col justify-between text-white text-left",
         "transition-all duration-200",
         "backdrop-blur-sm",
         "text-3xl",
-        "pt-10 pl-20 pr-5",
+        "py-10 pl-20 pr-5",
         "h-screen",
         {
           "opacity-100": !isHeroVisible,
@@ -41,21 +40,30 @@ export function Sidebar() {
         },
       )}
     >
-      {NavLinkProps.map((navLinkProp, index) => (
-        <NavLink key={index} {...navLinkProp} />
-      ))}
+      <div className="flex flex-col gap-10">
+        {NavLinkProps.map((navLinkProp, index) => (
+          <NavLink key={index} {...navLinkProp} />
+        ))}
+      </div>
+      <NavLink
+        href="#hero"
+        isVisible={activeSectionId === "hero"}
+        label="Back to Top"
+        className="text-xl"
+      />
     </div>
   );
 }
 
 function NavLink(props: NavLinkProps) {
-  const { href, isVisible, label } = props;
+  const { href, isVisible, label, className } = props;
 
   return (
-    <a href={`${href}`}>
+    <a href={`${href}`} className={className}>
       <div
         className={cn("w-52 overflow-hidden", {
           "text-primary": isVisible,
+          "hover:text-primary/80": !isVisible,
         })}
       >
         <div
