@@ -15,19 +15,12 @@ import {
   SiReact,
   SiRemix,
   SiSentry,
+  SiStripe,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
 
 const FrontendIconMap: Record<string, { icon: IconType; label: string }> = {
-  js: {
-    icon: BsJavascript,
-    label: "Javascript",
-  },
-  flutter: {
-    icon: SiFlutter,
-    label: "Flutter",
-  },
   html: {
     icon: SiHtml5,
     label: "HTML",
@@ -40,9 +33,21 @@ const FrontendIconMap: Record<string, { icon: IconType; label: string }> = {
     icon: SiTailwindcss,
     label: "Tailwind",
   },
+  js: {
+    icon: BsJavascript,
+    label: "Javascript",
+  },
+  typescript: {
+    icon: SiTypescript,
+    label: "Typescript",
+  },
   react: {
     icon: SiReact,
     label: "ReactJS",
+  },
+  flutter: {
+    icon: SiFlutter,
+    label: "Flutter",
   },
 };
 
@@ -51,37 +56,41 @@ const BackendIconMap: Record<string, { icon: IconType; label: string }> = {
     icon: FaNodeJs,
     label: "NodeJS",
   },
-  betterAuth: {
-    icon: SiBetterauth,
-    label: "BetterAuth",
-  },
-  remix: {
-    icon: SiRemix,
-    label: "Remix",
-  },
-  postgresql: {
-    icon: SiPostgresql,
-    label: "PostgreSQL",
-  },
-  docker: {
-    icon: SiDocker,
-    label: "Docker",
+  typescript: {
+    icon: SiTypescript,
+    label: "Typescript",
   },
   next: {
     icon: SiNextdotjs,
     label: "NextJS",
   },
-  sentry: {
-    icon: SiSentry,
-    label: "Sentry",
+  remix: {
+    icon: SiRemix,
+    label: "Remix",
+  },
+  betterAuth: {
+    icon: SiBetterauth,
+    label: "BetterAuth",
+  },
+  postgresql: {
+    icon: SiPostgresql,
+    label: "PostgreSQL",
   },
   mongodb: {
     icon: SiMongodb,
     label: "MongoDB",
   },
-  typescript: {
-    icon: SiTypescript,
-    label: "Typescript",
+  docker: {
+    icon: SiDocker,
+    label: "Docker",
+  },
+  sentry: {
+    icon: SiSentry,
+    label: "Sentry",
+  },
+  stripe: {
+    icon: SiStripe,
+    label: "Stripe",
   },
 };
 
