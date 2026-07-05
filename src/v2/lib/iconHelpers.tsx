@@ -1,4 +1,3 @@
-import type { IconType } from "react-icons";
 import { BsJavascript } from "react-icons/bs";
 import { FaNodeJs } from "react-icons/fa";
 import {
@@ -7,20 +6,20 @@ import {
   SiDocker,
   SiFlutter,
   SiHtml5,
-  SiKubernetes,
   SiMongodb,
   SiNextdotjs,
+  SiPhp,
   SiPostgresql,
-  SiPrisma,
   SiReact,
   SiRemix,
+  SiResend,
   SiSentry,
   SiStripe,
   SiTailwindcss,
   SiTypescript,
 } from "react-icons/si";
 
-const FrontendIconMap: Record<string, { icon: IconType; label: string }> = {
+const FrontendIconMap = {
   html: {
     icon: SiHtml5,
     label: "HTML",
@@ -45,13 +44,21 @@ const FrontendIconMap: Record<string, { icon: IconType; label: string }> = {
     icon: SiReact,
     label: "ReactJS",
   },
+  next: {
+    icon: SiNextdotjs,
+    label: "NextJS",
+  },
+  remix: {
+    icon: SiRemix,
+    label: "Remix",
+  },
   flutter: {
     icon: SiFlutter,
     label: "Flutter",
   },
 };
 
-const BackendIconMap: Record<string, { icon: IconType; label: string }> = {
+const BackendIconMap = {
   node: {
     icon: FaNodeJs,
     label: "NodeJS",
@@ -92,9 +99,17 @@ const BackendIconMap: Record<string, { icon: IconType; label: string }> = {
     icon: SiStripe,
     label: "Stripe",
   },
+  resend: {
+    icon: SiResend,
+    label: "Resend",
+  },
+  php: {
+    icon: SiPhp,
+    label: "PhP",
+  },
 };
 
-const IconMap: Record<string, { icon: IconType; label: string }> = {
+const IconMap = {
   ...FrontendIconMap,
   ...BackendIconMap,
 };
