@@ -44,16 +44,16 @@ function TechComponent({ Icon, label, reverse }: TechComponentProps) {
   if (reverse) {
     return (
       <div className="flex items-center gap-5">
-        <div className="text-4xl">{label}</div>
-        <Icon className="text-3xl" />
+        <div className="text-3xl">{label}</div>
+        <Icon className="text-2xl" />
       </div>
     );
   }
 
   return (
     <div className="flex items-center gap-5">
-      <Icon className="text-4xl" />
-      <div className="text-3xl">{label}</div>
+      <Icon className="text-3xl" />
+      <div className="text-2xl">{label}</div>
     </div>
   );
 }
