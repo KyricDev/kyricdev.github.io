@@ -1,19 +1,27 @@
 import { useState, useEffect } from "react";
 
-export function useRandomPosition(interval?: number) {
-  const [pos1, setPos1] = useState(5);
-  const [pos2, setPos2] = useState(78);
+type UseRandomPositionProps = {
+  usePercentage?: boolean;
+  interval?: number;
+};
+
+export function useRandomPosition({
+  interval,
+  usePercentage,
+}: UseRandomPositionProps) {
+  const [pos1, setPos1] = useState(0);
+  const [pos2, setPos2] = useState(0);
 
   useEffect(() => {
     const intervalFunction = setInterval(() => {
-      setPos1(Math.floor(Math.random() * 100));
-      setPos2(Math.floor(Math.random() * 100));
+      setPos1(!usePercentage ? Math.random() : Math.floor(Math.random() * 100));
+      setPos2(!usePercentage ? Math.random() : Math.floor(Math.random() * 100));
     }, interval ?? 1000);
 
     return () => {
       clearInterval(intervalFunction);
     };
-  }, []);
+  }, [interval, usePercentage]);
 
   return { pos1, pos2 };
 }
