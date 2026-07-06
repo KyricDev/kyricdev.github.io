@@ -25,15 +25,15 @@ export function ProjectCard(props: ProjectCardProps) {
       <div className="flex gap-10 h-screen items-center">
         <div className="flex flex-col gap-10 flex-4 items-end">
           <div className="flex flex-col gap-2">
-            <div className="text-3xl font-light text-right">
+            <div className="md:text-3xl font-light text-right">
               {title ?? "Sample Title"}
             </div>
-            <div className="flex gap-2 text-3xl">
-              {icons?.map((icon) => {
+            <div className="flex gap-2 md:text-3xl">
+              {icons?.map((icon, index) => {
                 const Icon = getIcon(icon);
                 const label = getLabel(icon);
                 return (
-                  <Tooltip>
+                  <Tooltip key={index}>
                     <TooltipTrigger>
                       <Icon />
                     </TooltipTrigger>
@@ -45,7 +45,7 @@ export function ProjectCard(props: ProjectCardProps) {
               })}
             </div>
           </div>
-          <div className="flex gap-10">
+          <div className="flex flex-col md:flex-row gap-10">
             <div className="flex-1">
               {img ? (
                 <img src={img} className="w-full rounded-4xl" />
@@ -53,11 +53,11 @@ export function ProjectCard(props: ProjectCardProps) {
                 <div className="flex-1 bg-primary h-56 rounded-4xl" />
               )}
             </div>
-            <div className="space-y-5 flex-1 text-lg text-right">
+            <div className="space-y-2 md:space-y-5 flex-1 text-xs md:text-lg text-right">
               <div>{description}</div>
-              <ul className="space-y-1">
-                {contributions?.map((contribution) => (
-                  <li className="flex justify-end">
+              <ul className="md:space-y-1">
+                {contributions?.map((contribution, index) => (
+                  <li className="flex justify-end" key={index}>
                     <div>{contribution}</div>
                     <ChevronLeft />
                   </li>
@@ -81,13 +81,15 @@ export function ProjectCard(props: ProjectCardProps) {
       {/* <div className="flex-1" /> */}
       <div className="flex flex-col gap-10 flex-4">
         <div className="flex flex-col gap-2">
-          <div className="text-3xl font-light">{title ?? "Sample Title"}</div>
-          <div className="flex gap-2 text-3xl">
-            {icons?.map((icon) => {
+          <div className="md:text-3xl font-light">
+            {title ?? "Sample Title"}
+          </div>
+          <div className="flex gap-2 md:text-3xl">
+            {icons?.map((icon, index) => {
               const Icon = getIcon(icon);
               const label = getLabel(icon);
               return (
-                <Tooltip>
+                <Tooltip key={index}>
                   <TooltipTrigger>
                     <Icon />
                   </TooltipTrigger>
@@ -99,12 +101,12 @@ export function ProjectCard(props: ProjectCardProps) {
             })}
           </div>
         </div>
-        <div className="flex gap-10">
-          <div className="space-y-5 flex-1 text-lg">
+        <div className="flex flex-col-reverse md:flex-row gap-10">
+          <div className="text-xs md:text-lg space-y-5 flex-1">
             <div>{description}</div>
-            <ul className="space-y-1">
-              {contributions?.map((contribution) => (
-                <li className="flex">
+            <ul className="md:space-y-1">
+              {contributions?.map((contribution, index) => (
+                <li className="flex" key={index}>
                   <ChevronRight />
                   <div> {contribution}</div>
                 </li>

@@ -5,9 +5,9 @@ export function Projects() {
   return (
     <div
       id="projects"
-      className="w-full text-white font-thin flex flex-col gap-10 pl-80"
+      className="w-full text-white font-thin flex flex-col gap-10 md:pl-80"
     >
-      <div className="flex flex-col px-50">
+      <div className="flex flex-col px-10 md:px-50">
         {PROJECTS.map(
           (
             { description, imgSrc, techstack, title, url, contributions },

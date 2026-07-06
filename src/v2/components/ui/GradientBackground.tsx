@@ -2,7 +2,7 @@ import { useRandomPosition } from "@/v2/hooks/useRandomPosition";
 import { cn } from "@/v2/lib/utils";
 
 export function GradientBackground() {
-  const { pos1, pos2 } = useRandomPosition(5000);
+  const { pos1, pos2 } = useRandomPosition({ interval: 5000 });
 
   return (
     <div

@@ -11,6 +11,10 @@ export const NavList: Record<string, Omit<NavLinkProps, "isVisible">> = {
     label: "about me",
     href: "#aboutme",
   },
+  hero: {
+    label: "back to top",
+    href: "#hero",
+  },
 };
 
 export type NavLinkProps = {

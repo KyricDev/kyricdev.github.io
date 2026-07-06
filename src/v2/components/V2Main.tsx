@@ -7,7 +7,7 @@ import "@/v2/styles/tailwind.css";
 
 function V2Main() {
   return (
-    <div className="flex flex-col gap-10 pl-20 relative">
+    <div className="flex flex-col gap-10 relative">
       <Sidebar />
       <Hero />
       <Projects />

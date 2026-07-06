@@ -9,11 +9,11 @@ export function Techstack() {
   return (
     <div
       id="techstack"
-      className="flex font-thin text-white pl-80 py-25 gap-20 h-screen justify-center"
+      className="flex font-thin text-white md:pl-80 py-25 gap-5 md:gap-20 h-screen justify-center"
     >
-      <div className="flex flex-col text-right gap-10">
-        <div className="text-6xl">Frontend</div>
-        <div className="gap-5 flex flex-col items-end">
+      <div className="flex flex-col text-right gap-5 md:gap-10">
+        <div className="text-2xl md:text-6xl">Frontend</div>
+        <div className="gap-3 md:gap-5 flex flex-col items-end">
           {Object.values(frontendIcons).map(({ icon: Icon, label }, index) => {
             return (
               <TechComponent Icon={Icon} label={label} reverse key={index} />
@@ -22,9 +22,9 @@ export function Techstack() {
         </div>
       </div>
       <Divider orientation="vertical" />
-      <div className="flex gap-10 flex-col">
-        <div className="text-6xl">Backend</div>
-        <div className="gap-5 flex flex-col">
+      <div className="flex gap-5 md:gap-10 flex-col">
+        <div className="text-2xl md:text-6xl">Backend</div>
+        <div className="gap-3 md:gap-5 flex flex-col">
           {Object.values(backendIcons).map(({ icon: Icon, label }, index) => {
             return <TechComponent Icon={Icon} label={label} key={index} />;
           })}
@@ -44,16 +44,16 @@ function TechComponent({ Icon, label, reverse }: TechComponentProps) {
   if (reverse) {
     return (
       <div className="flex items-center gap-5">
-        <div className="text-3xl">{label}</div>
-        <Icon className="text-2xl" />
+        <div className="md:text-3xl">{label}</div>
+        <Icon className="md:text-2xl" />
       </div>
     );
   }
 
   return (
     <div className="flex items-center gap-5">
-      <Icon className="text-3xl" />
-      <div className="text-2xl">{label}</div>
+      <Icon className="md:text-3xl" />
+      <div className="md:text-2xl">{label}</div>
     </div>
   );
 }
