@@ -23,9 +23,9 @@ export function ProjectCard(props: ProjectCardProps) {
   if (index !== undefined && index % 2 === 0) {
     return (
       <div className="flex gap-10 h-screen items-center">
-        <div className="flex flex-col gap-10 flex-4 items-end">
+        <div className="flex flex-col gap-10 flex-4">
           <div className="flex flex-col gap-2">
-            <div className="md:text-3xl font-light text-right">
+            <div className="md:text-3xl font-light">
               {title ?? "Sample Title"}
             </div>
             <div className="flex gap-2 md:text-3xl">
@@ -45,7 +45,18 @@ export function ProjectCard(props: ProjectCardProps) {
               })}
             </div>
           </div>
-          <div className="flex flex-col md:flex-row gap-10">
+          <div className="flex flex-col-reverse md:flex-row gap-10">
+            <div className="text-xs md:text-lg space-y-5 flex-1">
+              <div>{description}</div>
+              <ul className="md:space-y-1">
+                {contributions?.map((contribution, index) => (
+                  <li className="flex" key={index}>
+                    <ChevronRight />
+                    <div> {contribution}</div>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <div className="flex-1">
               {img ? (
                 <img src={img} className="w-full rounded-4xl" />
@@ -53,35 +64,22 @@ export function ProjectCard(props: ProjectCardProps) {
                 <div className="flex-1 bg-primary h-56 rounded-4xl" />
               )}
             </div>
-            <div className="space-y-2 md:space-y-5 flex-1 text-xs md:text-lg text-right">
-              <div>{description}</div>
-              <ul className="md:space-y-1">
-                {contributions?.map((contribution, index) => (
-                  <li className="flex justify-end" key={index}>
-                    <div>{contribution}</div>
-                    <ChevronLeft />
-                  </li>
-                ))}
-              </ul>
-            </div>
           </div>
           <div>
             <a href={url} target="_blank">
-              <Button className="px-15 py-7">Site</Button>
+              <Button className="px-8 md:px-15 md:py-7">Site</Button>
             </a>
           </div>
         </div>
-        {/* <div className="flex-1" /> */}
       </div>
     );
   }
 
   return (
     <div className="flex gap-10 h-screen items-center">
-      {/* <div className="flex-1" /> */}
-      <div className="flex flex-col gap-10 flex-4">
+      <div className="flex flex-col gap-10 flex-4 items-end">
         <div className="flex flex-col gap-2">
-          <div className="md:text-3xl font-light">
+          <div className="md:text-3xl font-light text-right">
             {title ?? "Sample Title"}
           </div>
           <div className="flex gap-2 md:text-3xl">
@@ -101,18 +99,7 @@ export function ProjectCard(props: ProjectCardProps) {
             })}
           </div>
         </div>
-        <div className="flex flex-col-reverse md:flex-row gap-10">
-          <div className="text-xs md:text-lg space-y-5 flex-1">
-            <div>{description}</div>
-            <ul className="md:space-y-1">
-              {contributions?.map((contribution, index) => (
-                <li className="flex" key={index}>
-                  <ChevronRight />
-                  <div> {contribution}</div>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="flex flex-col md:flex-row gap-10">
           <div className="flex-1">
             {img ? (
               <img src={img} className="w-full rounded-4xl" />
@@ -120,10 +107,21 @@ export function ProjectCard(props: ProjectCardProps) {
               <div className="flex-1 bg-primary h-56 rounded-4xl" />
             )}
           </div>
+          <div className="space-y-5 flex-1 text-xs md:text-lg text-right">
+            <div>{description}</div>
+            <ul className="md:space-y-1">
+              {contributions?.map((contribution, index) => (
+                <li className="flex justify-end" key={index}>
+                  <div>{contribution}</div>
+                  <ChevronLeft />
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
         <div>
           <a href={url} target="_blank">
-            <Button className="px-15 py-7">Site</Button>
+            <Button className="px-8 md:px-15 md:py-7">Site</Button>
           </a>
         </div>
       </div>
