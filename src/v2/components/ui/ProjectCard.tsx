@@ -82,7 +82,7 @@ export function ProjectCard(props: ProjectCardProps) {
           <div className="md:text-3xl font-light text-right">
             {title ?? "Sample Title"}
           </div>
-          <div className="flex flex-row-reverse gap-2 md:text-3xl">
+          <div className="flex justify-end gap-2 md:text-3xl">
             {icons?.map((icon, index) => {
               const Icon = getIcon(icon);
               const label = getLabel(icon);
