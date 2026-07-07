@@ -48,6 +48,9 @@ jobs:
         uses: actions/deploy-pages@v4
 
   deploy-s3-aws-static:
+    environment:
+      name: github-pages
+
     needs: build
 
     runs-on: ubuntu-latest
