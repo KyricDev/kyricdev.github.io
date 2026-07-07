@@ -17,8 +17,9 @@ Deploys automatically to S3 static hosting and Github Pages.
 ## 🧰 Tech Stack
 
 - Vite
-- HTML / CSS / JavaScript (or React / Vue if applicable)
+- HTML / CSS / JavaScript / ReactJS / Typescript
 - GitHub Pages
+- AWS S3
 
 ---
 
